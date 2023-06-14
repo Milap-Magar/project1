@@ -10,20 +10,16 @@ const Results = () => {
   const location = useLocation(); //images, news, videos
 
   useEffect(() => {
-    getResults("");
+    getResults().then((resp)=>{
+      console.log(resp);
+    })
   }, []);
 
   if (isLoading) return <Loader />;
 
   switch (location.pathname) {
     case "/search":
-      return (
-        <div className="flex flex-wrap justify-between space-y-6 sm:px-56">
-          {/* {results?.results?.map(({ link, title })=>(
-            
-          ))} */}
-        </div>
-      )
+      return "SEARCH";
     case "/images":
       return "SEARCH";
     case "/news":
